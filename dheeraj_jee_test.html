@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dheeraj JEE Mock Test</title>
+<style>
+  @page { size: A4; margin: 12mm 14mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10.5pt;
+    color: #000;
+    background: #fff;
+    line-height: 1.45;
+  }
+
+  .page { max-width: 180mm; margin: 0 auto; padding: 8mm 0; }
+
+  /* ── HEADER ── */
+  .header-outer {
+    border: 3px double #000;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  .header-top {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 6px 10px 4px;
+  }
+  .header-top .institute {
+    font-size: 8pt;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .header-top h1 {
+    font-size: 22pt;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin: 2px 0;
+  }
+  .header-top .subtitle {
+    font-size: 10.5pt;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  .header-bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 6px 10px;
+    background: #f5f5f5;
+    border-top: 1px solid #000;
+    font-size: 9.5pt;
+  }
+  .hb-item { text-align: center; }
+  .hb-item .lbl { font-size: 7.5pt; color: #555; text-transform: uppercase; letter-spacing: 0.5px; display: block; }
+  .hb-item .val { font-weight: bold; font-size: 11pt; }
+  .hb-sep { color: #ccc; font-size: 16pt; }
+
+  /* ── STUDENT INFO ── */
+  .student-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 10pt;
+  }
+  .sf { flex: 1; border-bottom: 1.5px solid #000; padding: 2px 0; }
+  .sf span { font-weight: bold; margin-right: 4px; }
+
+  /* ── INSTRUCTIONS ── */
+  .instructions {
+    border: 1.5px solid #555;
+    padding: 7px 12px;
+    margin-bottom: 14px;
+    background: #fafafa;
+    font-size: 9pt;
+  }
+  .instructions h3 {
+    font-size: 9.5pt;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 3px;
+  }
+  .instructions ol { padding-left: 16px; }
+  .instructions li { margin-bottom: 2px; line-height: 1.4; }
+  .instructions .marking-grid {
+    display: flex;
+    gap: 20px;
+    margin-top: 6px;
+    font-size: 8.5pt;
+  }
+  .marking-grid .mg-item {
+    border: 1px solid #aaa;
+    padding: 3px 8px;
+    background: #fff;
+    text-align: center;
+  }
+  .mg-item b { display: block; font-size: 9.5pt; }
+
+  /* ── SECTION HEADERS ── */
+  .section-break { page-break-before: always; }
+  .section-header {
+    margin: 0 0 0;
+    overflow: hidden;
+  }
+  .section-title {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 9px 10px 7px;
+    font-size: 14pt;
+    font-weight: bold;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+  }
+  .section-subtitle {
+    background: #333;
+    color: #ddd;
+    text-align: center;
+    padding: 3px;
+    font-size: 8.5pt;
+    letter-spacing: 1px;
+  }
+  .section-meta {
+    display: flex;
+    justify-content: space-between;
+    background: #eee;
+    border: 1px solid #bbb;
+    padding: 4px 12px;
+    font-size: 9pt;
+    margin-bottom: 10px;
+    border-top: none;
+  }
+
+  /* ── PART HEADERS ── */
+  .part-header {
+    background: #444;
+    color: #fff;
+    padding: 4px 12px;
+    font-size: 9.5pt;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 12px 0 8px;
+  }
+  .part-header span {
+    float: right;
+    font-size: 8.5pt;
+    font-weight: normal;
+    opacity: 0.85;
+  }
+
+  /* ── QUESTIONS ── */
+  .question {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 11px;
+    page-break-inside: avoid;
+  }
+  .q-num {
+    font-weight: bold;
+    min-width: 26px;
+    font-size: 10.5pt;
+    padding-top: 1px;
+  }
+  .q-body { flex: 1; }
+  .q-text { margin-bottom: 5px; line-height: 1.5; }
+
+  .options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 24px;
+  }
+  .opt { display: flex; gap: 5px; align-items: flex-start; }
+  .opt-lbl { font-weight: bold; min-width: 18px; }
+
+  .num-box {
+    display: inline-block;
+    border: 1px solid #888;
+    width: 90px;
+    height: 24px;
+    margin-top: 4px;
+    vertical-align: bottom;
+  }
+  .num-hint {
+    font-size: 8.5pt;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 3px;
+  }
+
+  /* ── SUBJECT ORNAMENTAL DIVIDER ── */
+  .ornament {
+    text-align: center;
+    margin: 14px 0 0;
+    font-size: 10pt;
+    letter-spacing: 4px;
+    color: #666;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 18px;
+    border-top: 1.5px solid #000;
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    color: #555;
+  }
+
+  @media print {
+    body { margin: 0; }
+    .page { padding: 0; }
+    .section-break { page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ════════════════ HEADER ════════════════ -->
+<div class="header-outer">
+  <div class="header-top">
+    <div class="institute">Niruthi Educational Institute &nbsp;·&nbsp; JEE Preparation Programme</div>
+    <h1>Dheeraj's JEE Test</h1>
+    <div class="subtitle">Joint Entrance Examination &mdash; Full Mock Test &nbsp;|&nbsp; Paper I</div>
+  </div>
+  <div class="header-bottom">
+    <div class="hb-item"><span class="lbl">Date</span><span class="val">24 May 2026</span></div>
+    <div class="hb-sep">|</div>
+    <div class="hb-item"><span class="lbl">Duration</span><span class="val">3 Hours</span></div>
+    <div class="hb-sep">|</div>
+    <div class="hb-item"><span class="lbl">Max. Marks</span><span class="val">300</span></div>
+    <div class="hb-sep">|</div>
+    <div class="hb-item"><span class="lbl">Total Questions</span><span class="val">75</span></div>
+    <div class="hb-sep">|</div>
+    <div class="hb-item"><span class="lbl">Exam Type</span><span class="val">JEE MAIN</span></div>
+  </div>
+</div>
+
+<!-- ── STUDENT INFO ── -->
+<div class="student-box">
+  <div class="sf"><span>Name:</span> Dheeraj&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+  <div class="sf"><span>Roll No.:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+  <div class="sf"><span>Batch:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>
+
+<!-- ── INSTRUCTIONS ── -->
+<div class="instructions">
+  <h3>General Instructions</h3>
+  <ol>
+    <li>The question paper consists of <b>75 questions</b> divided equally across <b>Mathematics, Physics and Chemistry</b> (25 each).</li>
+    <li>Each subject has <b>20 Multiple Choice Questions (MCQ)</b> and <b>5 Numerical Answer Type</b> questions.</li>
+    <li>Use <b>blue/black ball-point pen</b> only. Rough work on the space provided at the end.</li>
+    <li>Answers once marked cannot be changed. Ensure accuracy before marking.</li>
+    <li>For MCQs, choose the single best answer. For Numerical, write the exact integer/decimal value.</li>
+  </ol>
+  <div class="marking-grid">
+    <div class="mg-item"><b>+4</b>Correct answer (MCQ)</div>
+    <div class="mg-item"><b>&minus;1</b>Wrong answer (MCQ)</div>
+    <div class="mg-item"><b>+4</b>Correct (Numerical)</div>
+    <div class="mg-item"><b>0</b>Wrong / Unattempted (Numerical)</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--                   SECTION 1 — MATHEMATICS                 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section-header">
+  <div class="section-title">&#x2460; &nbsp; Mathematics</div>
+  <div class="section-subtitle">Sets &bull; Trigonometry &bull; Algebra &bull; Coordinate Geometry &bull; Probability &bull; Calculus</div>
+</div>
+<div class="section-meta">
+  <span>Questions: 1 &ndash; 25</span>
+  <span>Marks: 100 &nbsp;|&nbsp; Part A: MCQ (Q1&ndash;20) &nbsp;|&nbsp; Part B: Numerical (Q21&ndash;25)</span>
+</div>
+
+<!-- MATH PART A — MCQ -->
+<div class="part-header">Part A &nbsp;&mdash;&nbsp; Multiple Choice Questions &nbsp;(Each carries +4 / &minus;1)<span>Q1 to Q20</span></div>
+
+<div class="question">
+  <div class="q-num">1.</div>
+  <div class="q-body">
+    <div class="q-text">If A&nbsp;=&nbsp;{1, 2, 3, 4} and B&nbsp;=&nbsp;{3, 4, 5, 6}, then A&nbsp;&cap;&nbsp;B is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> {1, 2}</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> {3, 4}</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> {5, 6}</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> {1, 6}</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">2.</div>
+  <div class="q-body">
+    <div class="q-text">The value of sin&sup2;&theta; + cos&sup2;&theta; is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 0</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 1</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 2</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Depends on &theta;</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">3.</div>
+  <div class="q-body">
+    <div class="q-text">The roots of x&sup2; &minus; 5x + 6 = 0 are:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 2, 3</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 1, 6</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> &minus;2, &minus;3</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 5, 6</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">4.</div>
+  <div class="q-body">
+    <div class="q-text">The number of ways to arrange 5 different books on a shelf is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 25</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 60</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 120</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 240</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">5.</div>
+  <div class="q-body">
+    <div class="q-text">The coefficient of x&sup2; in (1 + x)<sup>4</sup> is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 4</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 6</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 12</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 24</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">6.</div>
+  <div class="q-body">
+    <div class="q-text">The 10th term of the AP: 2, 5, 8, &hellip; is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 29</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 30</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 31</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 32</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">7.</div>
+  <div class="q-body">
+    <div class="q-text">The sum of the first 4 terms of the GP: 2, 4, 8, &hellip; is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 28</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 30</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 32</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 34</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">8.</div>
+  <div class="q-body">
+    <div class="q-text">Slope of the line passing through (1, 2) and (3, 6) is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 1</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 2</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 3</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 4</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">9.</div>
+  <div class="q-body">
+    <div class="q-text">Probability of getting a head when tossing a fair coin is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 0</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 1/4</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 1/2</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 1</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">10.</div>
+  <div class="q-body">
+    <div class="q-text">The negation of the statement &ldquo;All birds can fly&rdquo; is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> No birds can fly</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Some birds cannot fly</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> All birds cannot fly</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Some birds can fly</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">11.</div>
+  <div class="q-body">
+    <div class="q-text">If i = &radic;(&minus;1), then i<sup>8</sup> equals:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 1</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> &minus;1</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> i</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> &minus;i</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">12.</div>
+  <div class="q-body">
+    <div class="q-text">The middle term in the expansion of (x + 1)<sup>6</sup> is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 15x&sup3;</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 20x&sup3;</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 15x&sup2;</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 20x&sup2;</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">13.</div>
+  <div class="q-body">
+    <div class="q-text">sin 90&deg; equals:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 0</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 1</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> &minus;1</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 1/2</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">14.</div>
+  <div class="q-body">
+    <div class="q-text">Mean of 2, 4, 6, 8 is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 4</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 5</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 6</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 7</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">15.</div>
+  <div class="q-body">
+    <div class="q-text">Equation of line with slope 2 passing through the origin is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> y = 2x</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> x = 2y</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> y = x + 2</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 2x + y = 0</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">16.</div>
+  <div class="q-body">
+    <div class="q-text">The value of <sup>5</sup>C<sub>2</sub> is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 5</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 10</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 15</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 20</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">17.</div>
+  <div class="q-body">
+    <div class="q-text">Sum of the first 5 natural numbers is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 10</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 15</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 20</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 25</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">18.</div>
+  <div class="q-body">
+    <div class="q-text">Probability of getting an even number when a die is rolled is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 1/6</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 1/3</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 1/2</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 2/3</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">19.</div>
+  <div class="q-body">
+    <div class="q-text">Domain of f(x) = 1/(x &minus; 2) is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> x &ne; 2</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> x = 2</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> x &gt; 2</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> All real numbers</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">20.</div>
+  <div class="q-body">
+    <div class="q-text">Distance of point (3, 4, 12) from the origin is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 12</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 13</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 14</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 15</div>
+    </div>
+  </div>
+</div>
+
+<!-- MATH PART B — NUMERICAL -->
+<div class="part-header">Part B &nbsp;&mdash;&nbsp; Numerical Answer Type &nbsp;(Each carries +4 / 0)<span>Q21 to Q25</span></div>
+
+<div class="question">
+  <div class="q-num">21.</div>
+  <div class="q-body">
+    <div class="q-text">Find the sum of roots of the equation x&sup2; &minus; 7x + 10 = 0.</div>
+    <div class="num-hint">Write your numerical answer in the box below.</div>
+    <div class="num-box"></div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">22.</div>
+  <div class="q-body">
+    <div class="q-text">Find the 15th term of the AP: 3, 7, 11, &hellip;</div>
+    <div class="num-hint">Write your numerical answer in the box below.</div>
+    <div class="num-box"></div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">23.</div>
+  <div class="q-body">
+    <div class="q-text">Find the coefficient of x&sup3; in the expansion of (1 + x)<sup>5</sup>.</div>
+    <div class="num-hint">Write your numerical answer in the box below.</div>
+    <div class="num-box"></div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">24.</div>
+  <div class="q-body">
+    <div class="q-text">Find the slope of the line joining the points (2, 3) and (6, 11).</div>
+    <div class="num-hint">Write your numerical answer in the box below.</div>
+    <div class="num-box"></div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">25.</div>
+  <div class="q-body">
+    <div class="q-text">A coin is tossed twice. What is the total number of possible outcomes?</div>
+    <div class="num-hint">Write your numerical answer in the box below.</div>
+    <div class="num-box"></div>
+  </div>
+</div>
+
+<div class="ornament">&#x2666; &nbsp;&#x2666; &nbsp;&#x2666;</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--                     SECTION 2 — PHYSICS                   -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section-header section-break">
+  <div class="section-title">&#x2461; &nbsp; Physics</div>
+  <div class="section-subtitle">Mechanics &bull; Gravitation &bull; Waves &bull; Oscillations &bull; Properties of Matter &bull; Thermodynamics</div>
+</div>
+<div class="section-meta">
+  <span>Questions: 26 &ndash; 50 (numbered 1&ndash;25 within section)</span>
+  <span>Marks: 100 &nbsp;|&nbsp; Part A: MCQ (Q1&ndash;20) &nbsp;|&nbsp; Part B: Numerical (Q21&ndash;25)</span>
+</div>
+
+<!-- PHYSICS PART A — MCQ -->
+<div class="part-header">Part A &nbsp;&mdash;&nbsp; Multiple Choice Questions &nbsp;(Each carries +4 / &minus;1)<span>Q1 to Q20</span></div>
+
+<div class="question">
+  <div class="q-num">1.</div>
+  <div class="q-body">
+    <div class="q-text">Dheeraj measured the length of a classroom in Dharmavaram as 12.340 m. The number of significant figures is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 3</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 4</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 5</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 6</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">2.</div>
+  <div class="q-body">
+    <div class="q-text">Harsha rides his bike from Kadiri to Dharmavaram covering 60 km in 2 hours. His average speed is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 20 km/h</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 30 km/h</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 40 km/h</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 60 km/h</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">3.</div>
+  <div class="q-body">
+    <div class="q-text">Chintu throws a cricket ball vertically upward with speed 20 m/s. Maximum height reached is approximately: &nbsp;(g = 10 m/s&sup2;)</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 10 m</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 20 m</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 30 m</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 40 m</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">4.</div>
+  <div class="q-body">
+    <div class="q-text">Maneesh Anna pushes a cart of mass 5 kg with a force of 20 N. The acceleration produced is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 2 m/s&sup2;</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 4 m/s&sup2;</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 5 m/s&sup2;</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 10 m/s&sup2;</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">5.</div>
+  <div class="q-body">
+    <div class="q-text">A wooden block remains at rest on a rough surface because:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> No force acts on it</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Static friction balances the applied force</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Kinetic friction acts on it</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Gravity disappears</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">6.</div>
+  <div class="q-body">
+    <div class="q-text">Nandhu rides a scooter of total mass 100 kg at 10 m/s. The kinetic energy is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 1000 J</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 2000 J</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 5000 J</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 10000 J</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">7.</div>
+  <div class="q-body">
+    <div class="q-text">Harsha lifts a 50 N box by 2 m in 5 s. The power developed is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 10 W</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 20 W</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 25 W</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 50 W</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">8.</div>
+  <div class="q-body">
+    <div class="q-text">A spinning fan continues rotating after power is switched off due to:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Newton&rsquo;s first law</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Conservation of angular momentum</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Friction</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Gravity</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">9.</div>
+  <div class="q-body">
+    <div class="q-text">The approximate value of g near Earth&rsquo;s surface is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 5 m/s&sup2;</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 9.8 m/s&sup2;</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 15 m/s&sup2;</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 20 m/s&sup2;</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">10.</div>
+  <div class="q-body">
+    <div class="q-text">Escape velocity from Earth is approximately:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 7.9 km/s</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 11.2 km/s</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 15 km/s</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 20 km/s</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">11.</div>
+  <div class="q-body">
+    <div class="q-text">The restoring force in a spring is proportional to displacement according to:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Newton&rsquo;s law</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Hooke&rsquo;s law</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Ohm&rsquo;s law</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Kepler&rsquo;s law</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">12.</div>
+  <div class="q-body">
+    <div class="q-text">Time period of a simple pendulum depends on:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Mass of the bob</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Amplitude</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Length of the pendulum</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Shape of the bob</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">13.</div>
+  <div class="q-body">
+    <div class="q-text">Wave speed is given by:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> v = f / &lambda;</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> v = f&lambda;</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> v = &lambda; / f</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> v = f&sup2;&lambda;</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">14.</div>
+  <div class="q-body">
+    <div class="q-text">A car accelerates uniformly from 0 to 20 m/s in 5 s. Its acceleration is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 2 m/s&sup2;</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 4 m/s&sup2;</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 5 m/s&sup2;</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 10 m/s&sup2;</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">15.</div>
+  <div class="q-body">
+    <div class="q-text">The dimensional formula of force is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> MLT<sup>&minus;1</sup></div>
+      <div class="opt"><span class="opt-lbl">(B)</span> ML<sup>2</sup>T<sup>&minus;2</sup></div>
+      <div class="opt"><span class="opt-lbl">(C)</span> MLT<sup>&minus;2</sup></div>
+      <div class="opt"><span class="opt-lbl">(D)</span> M<sup>0</sup>LT<sup>&minus;2</sup></div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">16.</div>
+  <div class="q-body">
+    <div class="q-text">Torque is defined as:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Force &times; distance</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Mass &times; acceleration</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Force &times; perpendicular distance</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Momentum &times; velocity</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">17.</div>
+  <div class="q-body">
+    <div class="q-text">Resonance occurs when the frequency of the external force becomes equal to:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Zero</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Natural frequency of the system</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Double the natural frequency</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Half the natural frequency</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">18.</div>
+  <div class="q-body">
+    <div class="q-text">Pressure is defined as:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Force &times; Area</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Force / Area</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Area / Force</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Mass &times; Volume</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">19.</div>
+  <div class="q-body">
+    <div class="q-text">Frequency is the reciprocal of:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Amplitude</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Velocity</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Time period</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Displacement</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">20.</div>
+  <div class="q-body">
+    <div class="q-text">A freely falling object converts:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Kinetic energy to potential energy</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Potential energy to kinetic energy</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Heat energy to light energy</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Mass to energy</div>
+    </div>
+  </div>
+</div>
+
+<!-- PHYSICS PART B — NUMERICAL -->
+<div class="part-header">Part B &nbsp;&mdash;&nbsp; Numerical Answer Type &nbsp;(Each carries +4 / 0)<span>Q21 to Q25</span></div>
+
+<div class="question">
+  <div class="q-num">21.</div>
+  <div class="q-body">
+    <div class="q-text">Chinna runs 100 m in 20 s. Find his speed in m/s.</div>
+    <div class="num-hint">Write your numerical answer in the box below.</div>
+    <div class="num-box"></div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">22.</div>
+  <div class="q-body">
+    <div class="q-text">Find the force required to accelerate a 4 kg object at 3 m/s&sup2;.</div>
+    <div class="num-hint">Write your numerical answer in the box below.</div>
+    <div class="num-box"></div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">23.</div>
+  <div class="q-body">
+    <div class="q-text">A 10 N force moves an object by 5 m. Calculate the work done (in joules).</div>
+    <div class="num-hint">Write your numerical answer in the box below.</div>
+    <div class="num-box"></div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">24.</div>
+  <div class="q-body">
+    <div class="q-text">Find the weight of a 6 kg object on Earth. &nbsp;(g = 10 m/s&sup2;)</div>
+    <div class="num-hint">Write your numerical answer in the box below.</div>
+    <div class="num-box"></div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">25.</div>
+  <div class="q-body">
+    <div class="q-text">A pendulum completes 20 oscillations in 40 seconds. Find its time period (in seconds).</div>
+    <div class="num-hint">Write your numerical answer in the box below.</div>
+    <div class="num-box"></div>
+  </div>
+</div>
+
+<div class="ornament">&#x2666; &nbsp;&#x2666; &nbsp;&#x2666;</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--                   SECTION 3 — CHEMISTRY                   -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section-header section-break">
+  <div class="section-title">&#x2462; &nbsp; Chemistry</div>
+  <div class="section-subtitle">Atomic Structure &bull; Bonding &bull; Equilibrium &bull; Thermodynamics &bull; Organic Chemistry &bull; Environmental Chemistry</div>
+</div>
+<div class="section-meta">
+  <span>Questions: 51 &ndash; 75 (numbered 1&ndash;25 within section)</span>
+  <span>Marks: 100 &nbsp;|&nbsp; Part A: MCQ (Q1&ndash;20) &nbsp;|&nbsp; Part B: Numerical (Q21&ndash;25)</span>
+</div>
+
+<!-- CHEMISTRY PART A — MCQ -->
+<div class="part-header">Part A &nbsp;&mdash;&nbsp; Multiple Choice Questions &nbsp;(Each carries +4 / &minus;1)<span>Q1 to Q20</span></div>
+
+<div class="question">
+  <div class="q-num">1.</div>
+  <div class="q-body">
+    <div class="q-text">Amma is boiling water for tea. If 18 g of water is taken, the number of moles of water present is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> 0.5</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> 1</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> 2</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> 18</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">2.</div>
+  <div class="q-body">
+    <div class="q-text">Dheeraj inflated a balloon in summer. The balloon expanded mainly because:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Pressure decreases</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Temperature increases gas volume</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Mass of gas increases</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Gravity decreases</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">3.</div>
+  <div class="q-body">
+    <div class="q-text">Amma cooks rice in a pressure cooker because the increased pressure:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Decreases the boiling point</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Increases the boiling point</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Stops evaporation completely</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Permanently converts water into steam</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">4.</div>
+  <div class="q-body">
+    <div class="q-text">When the concentration of reactants is increased, the equilibrium shifts:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Backward</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Forward</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Reaction stops</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> No effect</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">5.</div>
+  <div class="q-body">
+    <div class="q-text">Rusting of iron is an example of:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Reduction</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Oxidation</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Neutralization</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Combustion</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">6.</div>
+  <div class="q-body">
+    <div class="q-text">Atomic number of an element represents the number of:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Neutrons</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Electrons only</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Protons</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Mass number</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">7.</div>
+  <div class="q-body">
+    <div class="q-text">Atomic radius generally decreases across a period because:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Atomic mass decreases</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Nuclear charge increases</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Electrons disappear</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Number of shells decreases</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">8.</div>
+  <div class="q-body">
+    <div class="q-text">In H<sub>2</sub> molecule, bond formation occurs by:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Transfer of electrons</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Sharing of electrons</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Loss of neutrons</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Gain of protons</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">9.</div>
+  <div class="q-body">
+    <div class="q-text">The shape of the water (H<sub>2</sub>O) molecule is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Linear</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Trigonal planar</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Bent (V-shaped)</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Tetrahedral</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">10.</div>
+  <div class="q-body">
+    <div class="q-text">Hydrogen gas is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> The heaviest gas</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> The lightest gas</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> A coloured gas</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Liquid at room temperature</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">11.</div>
+  <div class="q-body">
+    <div class="q-text">Sodium is stored in kerosene because it:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Is very expensive</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Reacts vigorously with air and moisture</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Is radioactive</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Evaporates quickly</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">12.</div>
+  <div class="q-body">
+    <div class="q-text">LPG used in Amma&rsquo;s kitchen mainly contains:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Methane</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Propane and Butane</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Hydrogen</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Carbon monoxide</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">13.</div>
+  <div class="q-body">
+    <div class="q-text">The alcohol functional group is represented by:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> &minus;CHO</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> &minus;OH</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> &minus;COOH</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> &minus;NH<sub>2</sub></div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">14.</div>
+  <div class="q-body">
+    <div class="q-text">Acid rain mainly occurs due to:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> CO<sub>2</sub></div>
+      <div class="opt"><span class="opt-lbl">(B)</span> SO<sub>2</sub> and NO<sub>x</sub></div>
+      <div class="opt"><span class="opt-lbl">(C)</span> O<sub>3</sub></div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Hydrogen gas</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">15.</div>
+  <div class="q-body">
+    <div class="q-text">Hybridization of carbon in methane (CH<sub>4</sub>) is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> sp</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> sp&sup2;</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> sp&sup3;</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> dsp&sup2;</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">16.</div>
+  <div class="q-body">
+    <div class="q-text">The ideal gas equation is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> PV = nRT</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> E = mc&sup2;</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> F = ma</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> V = IR</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">17.</div>
+  <div class="q-body">
+    <div class="q-text">Burning LPG in a stove is an example of:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Endothermic reaction</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Exothermic reaction</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Neutralization reaction</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Electrolysis</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">18.</div>
+  <div class="q-body">
+    <div class="q-text">At chemical equilibrium:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> The reaction stops completely</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Forward and backward reactions proceed at equal rates</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Only the backward reaction occurs</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Concentration of products becomes zero</div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">19.</div>
+  <div class="q-body">
+    <div class="q-text">The general formula of alkanes is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> C<sub>n</sub>H<sub>2n</sub></div>
+      <div class="opt"><span class="opt-lbl">(B)</span> C<sub>n</sub>H<sub>2n+2</sub></div>
+      <div class="opt"><span class="opt-lbl">(C)</span> C<sub>n</sub>H<sub>2n&minus;2</sub></div>
+      <div class="opt"><span class="opt-lbl">(D)</span> C<sub>n</sub>H<sub>n</sub></div>
+    </div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">20.</div>
+  <div class="q-body">
+    <div class="q-text">The most electronegative element is:</div>
+    <div class="options">
+      <div class="opt"><span class="opt-lbl">(A)</span> Oxygen</div>
+      <div class="opt"><span class="opt-lbl">(B)</span> Nitrogen</div>
+      <div class="opt"><span class="opt-lbl">(C)</span> Fluorine</div>
+      <div class="opt"><span class="opt-lbl">(D)</span> Chlorine</div>
+    </div>
+  </div>
+</div>
+
+<!-- CHEMISTRY PART B — NUMERICAL -->
+<div class="part-header">Part B &nbsp;&mdash;&nbsp; Numerical Answer Type &nbsp;(Each carries +4 / 0)<span>Q21 to Q25</span></div>
+
+<div class="question">
+  <div class="q-num">21.</div>
+  <div class="q-body">
+    <div class="q-text">Calculate the number of moles present in 44 g of CO<sub>2</sub>. (Molar mass of CO<sub>2</sub> = 44 g/mol)</div>
+    <div class="num-hint">Write your numerical answer in the box below.</div>
+    <div class="num-box"></div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">22.</div>
+  <div class="q-body">
+    <div class="q-text">If 100 J of work is done on a system and its internal energy increases by 50 J, find the heat supplied (in joules).</div>
+    <div class="num-hint">Write your numerical answer in the box below.</div>
+    <div class="num-box"></div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">23.</div>
+  <div class="q-body">
+    <div class="q-text">Pressure of a gas doubles at constant temperature. The final volume becomes what fraction of the original volume?</div>
+    <div class="num-hint">Write your numerical answer in the box below.</div>
+    <div class="num-box"></div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">24.</div>
+  <div class="q-body">
+    <div class="q-text">Find the valency of oxygen in H<sub>2</sub>O.</div>
+    <div class="num-hint">Write your numerical answer in the box below.</div>
+    <div class="num-box"></div>
+  </div>
+</div>
+
+<div class="question">
+  <div class="q-num">25.</div>
+  <div class="q-body">
+    <div class="q-text">What is the number of carbon atoms present in one molecule of propane (C<sub>3</sub>H<sub>8</sub>)?</div>
+    <div class="num-hint">Write your numerical answer in the box below.</div>
+    <div class="num-box"></div>
+  </div>
+</div>
+
+<div class="ornament">&#x2736; &nbsp; End of Question Paper &nbsp; &#x2736;</div>
+
+<!-- ── FOOTER ── -->
+<div class="footer">
+  <span>Niruthi Educational Institute &nbsp;|&nbsp; Dheeraj&rsquo;s JEE Mock Test &nbsp;|&nbsp; 24 May 2026</span>
+  <span>Rough work on separate sheet only &nbsp;|&nbsp; All the best, Dheeraj!</span>
+</div>
+
+</div><!-- end .page -->
+</body>
+</html>

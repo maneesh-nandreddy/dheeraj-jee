@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f5f7ff;
+  --color-brand-100: #ebf0ff;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-900: #1e3a8a;
+  
+  --color-dark-bg: #0b0f19;
+  --color-dark-surface: #151c2c;
+  --color-dark-border: #222d44;
+}
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #090d16;
+    --foreground: #f1f5f9;
+    --card-bg: #111827;
+    --card-border: #1f2937;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark .glass-panel {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #374151;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ==========================================================================
+   NTA JEE MAIN PALETTE COLOR STATES
+   Replicating the exact geometric shapes used in the NTA CBT engine
+   ========================================================================== */
+
+/* State 1: Not Visited (Gray Circle/Curved Square) */
+.nta-badge-not-visited {
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+}
+.dark .nta-badge-not-visited {
+  background-color: #1e293b;
+  color: #94a3b8;
+  border-color: #334155;
+}
+
+/* State 2: Not Answered (Red Curved Hexagon/Trapezoidal shape - simplified to NTA-accurate red tag) */
+.nta-badge-not-answered {
+  background-color: #ef4444;
+  color: #ffffff;
+  border: 1px solid #dc2626;
+  border-radius: 12px 12px 4px 4px; /* Curved top, flat bottom is the iconic NTA "Not Answered" tag! */
+}
+
+/* State 3: Answered (Green Hexagon/Curved Square - iconic curved side square) */
+.nta-badge-answered {
+  background-color: #22c55e;
+  color: #ffffff;
+  border: 1px solid #16a34a;
+  border-radius: 4px 4px 12px 12px; /* Curved bottom, flat top is the iconic NTA "Answered" tag! */
+}
+
+/* State 4: Marked for Review (Purple Circle) */
+.nta-badge-marked {
+  background-color: #a855f7;
+  color: #ffffff;
+  border: 1px solid #9333ea;
+  border-radius: 50%; /* Circle shape! */
+}
+
+/* State 5: Answered & Marked for Review (Purple Circle with a Green Dot) */
+.nta-badge-marked-answered {
+  background-color: #a855f7;
+  color: #ffffff;
+  border: 1px solid #9333ea;
+  border-radius: 50%;
+  position: relative;
+}
+
+.nta-badge-marked-answered::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border: 1.5px solid #ffffff;
+  border-radius: 50%;
+}
+.dark .nta-badge-marked-answered::after {
+  border-color: #111827;
+}
+
+/* KaTeX custom responsive fixes */
+.katex-display {
+  margin: 0.5em 0 !important;
+  padding: 0.25em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.katex {
+  font-size: 1.05em !important;
+  text-rendering: auto;
+}
